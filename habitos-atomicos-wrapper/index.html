@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Manual Visual dos Hábitos Atômicos</title>
+  <style>
+    :root { --bar-h: 44px; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #0B0B0B; overflow: hidden; }
+    #offer-bar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 999999;
+      height: var(--bar-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      text-align: center;
+      background: rgba(80, 18, 18, 0.98);
+      color: #F87171;
+      border-bottom: 1px solid rgba(239, 68, 68, 0.40);
+      font: 600 13px/1.1 Arial, sans-serif;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    @media (max-width: 520px) {
+      #offer-bar { font-size: 11px; }
+    }
+    #page {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: var(--bar-h);
+      bottom: 0;
+      overflow: hidden;
+      background: #0B0B0B;
+    }
+    iframe {
+      position: absolute;
+      left: 0;
+      top: calc(-1 * var(--bar-h));
+      width: 100%;
+      height: calc(100% + var(--bar-h));
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="offer-bar">⚡ OFERTA ESPECIAL DISPONÍVEL APENAS HOJE • <span id="date"></span></div>
+  <div id="page">
+    <iframe
+      src="https://manual-visual-habitos-atomicos-oficial.lovable.app/"
+      title="Manual Visual dos Hábitos Atômicos"
+      loading="eager"
+      allow="payment *"
+    ></iframe>
+  </div>
+  <script>
+    (function () {
+      const date = new Intl.DateTimeFormat('pt-BR').format(new Date());
+      document.getElementById('date').textContent = date;
+    })();
+  </script>
+</body>
+</html>
